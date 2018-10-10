@@ -15,7 +15,13 @@ typedef struct list_t List;
 
 void append_element(List* l, int value)
 {
-    if ((l->next) != NULL)
+    if (l == NULL)
+    {
+        l = (List *) malloc(sizeof(List));
+        l->value = value;
+        l->next = NULL;
+    }
+    else if ((l->next) == NULL)
     {
         List *n = (List *) malloc(sizeof(List));
         n->value = value;
@@ -25,6 +31,7 @@ void append_element(List* l, int value)
     else
         append_element(l->next, value);
 }
+
 
 void delete_element(List *l, int value)
 {
@@ -65,6 +72,10 @@ void print_list(List *l)
     {
         printf("%d\n", l->value);
         print_list(l->next);
+    } 
+    else
+    {
+        printf("End of List \n");
     }
 }
 
