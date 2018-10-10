@@ -35,18 +35,22 @@ void append_element(List* l, int value)
 
 void delete_element(List *l, int value)
 {
-    List *n = l->next;
     
-    if (n != NULL)
-    {
-        if (n->value == value)
+    if(l != NULL) {
+        
+        List *n = l->next;
+        
+        if (n != NULL)
         {
-            List *nn = n->next;
-            l->next = nn;
-            free(n);
+            if (n->value == value)
+            {
+                List *nn = n->next;
+                l->next = nn;
+                free(n);
+            }
+            else
+                delete_element(n, value);
         }
-        else
-            delete_element(n, value);
     }
 }
 
