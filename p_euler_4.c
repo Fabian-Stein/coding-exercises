@@ -10,7 +10,7 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 
 */
 
-#import <stdio.h>
+#include <stdio.h>
 
 
 void print_arr(int *arr, int n)
@@ -60,11 +60,15 @@ int main()
         for (int j = 999; j >= 0; j--)
         {
             int res = i*j;
-            if (is_palindrom(res) && res > largest)
+            if (is_palindrom(res))
             {
-                printf("%d\n", res);
-                largest = res;
-                break;
+                //printf("%d\n", res);
+                
+                if (res > largest)
+                {
+                    largest = res;
+                    break;
+                }
             }
         }
     }

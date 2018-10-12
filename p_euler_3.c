@@ -11,7 +11,7 @@ What is the largest prime factor of the number 600851475143 ?
 quick and dirty
 */
 
-#import <stdio.h>
+#include <stdio.h>
 
 //Very inefficient naive implentation
 int primes[1000];
