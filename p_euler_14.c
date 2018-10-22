@@ -37,26 +37,23 @@ void collatz_sequence(int x, int *sequence, int *n)
         {
             x = 3*x + 1;
         }
-        
         i++;
     }
     
     sequence[i] = x;
     i++;
-    printf("%d\n", i);
-    
     *n = i;
 }
 
 int main()
 {
-    int sequence[1000000];
+    int sequence[10000];
     int n_sequence = 0;
     
-    int c_sequence[1000000];
+    int c_sequence[10000];
     int c_n_sequence = 0;
     
-    for (int i = 1; i < 200000; i++)
+    for (int i = 1; i < 1000000; i++)
     {
         
         collatz_sequence(i, c_sequence, &c_n_sequence);
