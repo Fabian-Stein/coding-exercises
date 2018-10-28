@@ -27,13 +27,13 @@ int main()
     int n_sundays_first = 0;
     int weekday = 0; //0 == monday
     
-    for (int year = 1901; year < 2001; year++)
+    for (int year = 1900; year < 2001; year++)
     {
         for (int month = 0; month < 12; month++)
         {
             for (int day = 0; day < 31; day++)
             {
-                if (weekday == 6 && day == 0)
+                if (year > 1900 && weekday == 6 && day == 0)
                 {
                     n_sundays_first++;
                 }
